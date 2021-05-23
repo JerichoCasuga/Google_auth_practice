@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    
+    
+    <title>Registration</title>
+
+    <style>
+      
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration.</div>
+       <form action="#">
+   <div class="user-info">
+   
+     
+   <div class="input-info">
+     
+     <input type="text" placeholder="E-Mail" required>
+   </div>
+
+   <div class="input-info">
+     
+    <input type="text" placeholder="Password" required>
+  </div>
+   
+   <button class="button1">Register</button>
+    
+
+  <button  id="login">Login with Google</button>
+
+
+  
+  
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA3jyQjgxQZ6I2fxhY9GGc5irdunEDul88",
+    authDomain: "login-46ca6.firebaseapp.com",
+    projectId: "login-46ca6",
+    storageBucket: "login-46ca6.appspot.com",
+    messagingSenderId: "260003938658",
+    appId: "1:260003938658:web:29db170cdf2bfec4742c3b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+     
+    document.getElementById('login').addEventListener('click', GoogleLogin)
+   
+
+     let provider = new firebase.auth.GoogleAuthProvider()
+
+     function GoogleLogin(){
+       console.log('Signing In')
+       firebase.auth().signInWithPopup(provider).then(res=>{
+         console.log(res)
+       }).catch(e=>{
+        console.log(e)
+        
+
+       })
+       
+     }
+
+     function GoogleLogout(){
+       console.log('logged out')
+       
+     }
+
+     
+    
+    
+
+</script>
+
+
+
+</div>
+</form>
+  </div> 
+
+    <script></script>
+  </body>
+</html>
